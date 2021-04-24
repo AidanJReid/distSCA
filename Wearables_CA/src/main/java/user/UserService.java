@@ -4,6 +4,7 @@ import com.distSCA.service1_login.User.APIResponse;
 import com.distSCA.service1_login.User.Empty;
 import com.distSCA.service1_login.User.LoginRequest;
 import com.distSCA.service1_login.userGrpc.userImplBase;
+
 import io.grpc.stub.StreamObserver;
 
 public class UserService extends userImplBase {
@@ -11,7 +12,7 @@ public class UserService extends userImplBase {
 	@Override
 	public void login(LoginRequest request, StreamObserver<APIResponse> responseObserver) {
 
-		System.out.println("Inside login");
+		System.out.println("User login");
 
 		String username = request.getUsername();
 		String password = request.getPassword();
