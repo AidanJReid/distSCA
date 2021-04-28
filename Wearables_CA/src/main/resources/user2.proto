@@ -1,0 +1,4 @@
+syntax = "proto3";
+
+option java_package = "com.distSCA.service2_prox";
+
