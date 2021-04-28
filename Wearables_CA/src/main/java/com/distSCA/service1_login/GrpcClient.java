@@ -2,15 +2,21 @@ package com.distSCA.service1_login;
 
 import com.distSCA.service1_login.User.APIResponse;
 import com.distSCA.service1_login.User.LoginRequest;
-import com.distSCA.service1_login.userGrpc;
+//import com.distSCA.service1_login.userGrpc;
 import com.distSCA.service1_login.userGrpc.userBlockingStub;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import java.util.concurrent.TimeUnit;
+import io.grpc.StatusRuntimeException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GrpcClient {
+	
+	private static final Logger logger = Logger.getLogger(GrpcClient.class.getName());
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost",9090).usePlaintext().build();
 		
@@ -18,14 +24,27 @@ public class GrpcClient {
 		
 		userBlockingStub userStub = userGrpc.newBlockingStub(channel);
 		
-		LoginRequest loginrequest = LoginRequest.newBuilder().setUsername("AidanR").setPassword("AidanR").build();
+		try {
+			String name = "Aidan";
+			String password = "Aidan";
+		LoginRequest loginrequest = 
+				LoginRequest.newBuilder()
+				.setUsername(name)
+				.setPassword(password)
+				.build();
 		
 		APIResponse response = userStub.login(loginrequest);
 		
-		System.out.println(response.getResponsemessage());
+		logger.info(response.getResponsemessage());
 		
-		channel.shutdown();
-
+		} catch (StatusRuntimeException e) {
+		    logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
+		    return;		
+		    
+	    } finally {
+		
+		channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
+	    }
 	}
 
 }
