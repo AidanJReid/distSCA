@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-option java_package = "com.distSCA.service3_calorie";
 option java_multiple_files = true;
+option java_package = "com.distSCA.service3_calorie";
 option java_outer_classname = "MathServiceImpl";
 
 package service3_calorie;
@@ -10,10 +10,13 @@ package service3_calorie;
 service MathService {
 
   rpc calculate(CalculateRequest) returns (CalculateResponse) {}
+  
 
   rpc generateRandomNumbers(RandomRequest) returns (stream NumberResponse ) {}
+  
 
   rpc averageValues(stream NumberMessage) returns (CalculateResponse ) {}
+  
 
   rpc convertBase(stream ConvertMessage) returns (stream ConvertResponse ) {}
 

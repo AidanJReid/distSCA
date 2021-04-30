@@ -22,9 +22,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-//import ds.examples.maths.CalculateRequest.Operation;
-//import ds.examples.maths.MathServiceGrpc.MathServiceBlockingStub;
-//import ds.examples.maths.MathServiceGrpc.MathServiceStub;
+import com.distSCA.service3_calorie.CalculateRequest.Operation;
+import com.distSCA.service3_calorie.MathServiceGrpc.MathServiceBlockingStub;
+import com.distSCA.service3_calorie.MathServiceGrpc.MathServiceStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -73,7 +73,7 @@ public class MainGUIApplication {
 		discoverMathService(math_service_type);
 		
 		String host = "localhost";
-		int port = 9090;
+		int port = 60601;
 		
 		ManagedChannel channel = ManagedChannelBuilder
 				.forAddress(host, port)
