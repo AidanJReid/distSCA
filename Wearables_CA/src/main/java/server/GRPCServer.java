@@ -24,7 +24,7 @@ public class GRPCServer extends MathServiceImplBase {
 
 	public static void main(String args[]) throws IOException, InterruptedException {
 		 
-		 System.out.println("starting GRPC Server");
+		 System.out.println("starting GRPC Server..");
 		 Server server = ServerBuilder.forPort(60601).addService(
 
 				 new UserService()).build();
