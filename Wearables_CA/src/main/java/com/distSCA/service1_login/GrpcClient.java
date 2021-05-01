@@ -18,7 +18,7 @@ public class GrpcClient {
 
 	public static void main(String[] args) throws Exception {
 		
-		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost",60601).usePlaintext().build();
+		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost",60151).usePlaintext().build();
 		
 		// stubs - generate from proto
 		

@@ -3,15 +3,24 @@ package server;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.InetAddress;
 import java.util.ArrayList;
+import java.util.Properties;
 import java.util.Random;
 
 import com.distSCA.service3_calorie.CalculateRequest;
 import com.distSCA.service3_calorie.CalculateResponse;
 import com.distSCA.service3_calorie.CalculateRequest.Operation;
-
 import com.distSCA.service3_calorie.MathServiceGrpc.MathServiceImplBase;
+
+//import ds.examples.maths.MathServer;
+//import com.distSCA.service2_prox.MathServiceGrpc.MathServiceImplBase;
+
+import javax.jmdns.JmDNS;
+import javax.jmdns.ServiceInfo;
 
 import com.distSCA.service3_calorie.ConvertMessage;
 import com.distSCA.service3_calorie.ConvertResponse;
@@ -27,16 +36,83 @@ public class GRPCServer extends MathServiceImplBase {
 
 	// Server set up default message for all connections
 	public static void main(String args[]) throws IOException, InterruptedException {
+		
+		GRPCServer grpcserver = new GRPCServer();
+
+		Properties prop = grpcserver.getProperties();
+		
+		grpcserver.registerService(prop);
 		 
 		 System.out.println("starting GRPC Server");
-		 Server server = ServerBuilder.forPort(60601).addService(
+		 Server server = ServerBuilder.forPort(60151).addService(
 
 				 new UserService()).build();
 		 
-		 server.start();
-		 System.out.println("Server starting at "+ server.getPort());
+		 server.start(); // kickstart server
+		 
+		 System.out.println("Server starting at "+ server.getPort()); // 60151 for demo purposes
 	        server.awaitTermination();
 	 }
+	
+private Properties getProperties() {
+		
+		Properties prop = null;		
+		
+		 try (InputStream input = new FileInputStream("src/main/resources/grpc.properties")) {
+
+	            prop = new Properties();
+
+	            // load a properties file
+	            prop.load(input);
+
+	            // get the property value and print it out
+	            System.out.println("Loading GRPC properies ...");
+	            System.out.println("\t service_type: " + prop.getProperty("service_type"));
+	            System.out.println("\t service_name: " +prop.getProperty("service_name"));
+	            System.out.println("\t service_description: " +prop.getProperty("service_description"));
+		        System.out.println("\t service_port: " +prop.getProperty("service_port"));
+
+	        } catch (IOException ex) {
+	            ex.printStackTrace();
+	        }
+	
+		 return prop;
+	}
+	
+	
+	private  void registerService(Properties prop) {
+		
+		 try {
+	            // Create a JmDNS instance
+	            JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
+	            
+	            String service_type = prop.getProperty("service_type") ;//_maths._tcp.local.;
+	            String service_name = prop.getProperty("service_name")  ;// "wearables"
+	            int service_port = Integer.valueOf( prop.getProperty("service_port") );// #.60151;
+
+	            
+	            String service_description_properties = prop.getProperty("service_description")  ;
+	            
+	            // Register a service
+	            ServiceInfo serviceInfo = ServiceInfo.create(service_type, service_name, service_port, service_description_properties);
+	            jmdns.registerService(serviceInfo);
+	            
+	            System.out.printf("registering service with type %s and name %s \n", service_type, service_name);
+	            
+	            // Wait
+	            Thread.sleep(1000);
+
+	            // Unregister all services
+	            //jmdns.unregisterAllServices();
+
+	        } catch (IOException e) {
+	            System.out.println(e.getMessage());
+	        } catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    
+	}
 	
 	// Calculate Request relevant to Service 3 Calorie counter
 	public void calculate(CalculateRequest request, 
@@ -49,11 +125,11 @@ public class GRPCServer extends MathServiceImplBase {
 
 		if(	request.getOperation()==Operation.ADDITION)
 			value = request.getNumber1() + request.getNumber2();
-		else if(	request.getOperation()==Operation.SUBTRACTION)
+		else if(	request.getOperation()==Operation.SUBTRACTION) // mainly for demo and test purposes - serving no real function
 			value = request.getNumber1() - request.getNumber2();
-		else if(	request.getOperation()==Operation.MULTIPLICATION)
+		else if(	request.getOperation()==Operation.MULTIPLICATION) // this is the primary one used to calc calories times no. days
 			value = request.getNumber1() * request.getNumber2();
-		else if(	request.getOperation()==Operation.DIVISION)
+		else if(	request.getOperation()==Operation.DIVISION) // mainly for demo and test purposes - serving no real function
 			value = request.getNumber1() / request.getNumber2();
 		else {
 			value = Float.NaN;
@@ -150,7 +226,7 @@ public class GRPCServer extends MathServiceImplBase {
 
 	}
 	
-	// potentially extraneous code - putting in as placeholder
+	// potentially extraneous code - putting in as placeholder as it may be used
 	public StreamObserver<ConvertMessage> convertBase(StreamObserver<ConvertResponse> responseObserver) {
 		
 		return new StreamObserver<ConvertMessage> () {

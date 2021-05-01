@@ -1,19 +1,21 @@
-package com.distSCA.service3_calorie;
+package com.distSCA.service2_prox;
+
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import com.distSCA.service3_calorie.MathServiceGrpc.MathServiceBlockingStub;
-import com.distSCA.service3_calorie.MathServiceGrpc.MathServiceStub;
+import com.distSCA.service2_prox.MathServiceGrpc;
+import com.distSCA.service2_prox.MathServiceGrpc.MathServiceBlockingStub;
+import com.distSCA.service2_prox.MathServiceGrpc.MathServiceStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 
 
-public class MathClient {
+public class MathClient2 {
 
 	private static MathServiceBlockingStub blockingStub;
 	private static MathServiceStub asyncStub;
@@ -31,29 +33,10 @@ public class MathClient {
 
 		asyncStub = MathServiceGrpc.newStub(channel);
 		
-		calculate();
-		
 		generateRandomNumbersAsyn();
 		generateRandomNumbersBlocking();
 
-		averageValues();
 
-		convertBase();
-
-	}
-
-	
-	//unary rpc
-	public static void calculate() {
-		int num1 = 10;
-		int num2 = 20;
-
-		CalculateRequest req = CalculateRequest.newBuilder().setNumber1(num1).setNumber2(num2).build();
-
-	//	CalculateResponse response = blockingStub.calculate(req);
-
-	//	System.out.println("res: " + response.getResult() + " mes: " + response.getMessage());
-		System.out.println(req);
 	}
 	
 
@@ -101,7 +84,7 @@ public class MathClient {
 
 			@Override
 			public void onCompleted() {
-				System.out.println("Stream is completed ... received "+ count+ " rand numbers");
+				System.out.println("stream is completed ... received "+ count+ " rand numbers");
 			}
 
 		};
@@ -117,7 +100,7 @@ public class MathClient {
 
 	}
 
-	
+	/*
 	public static void averageValues() {
 
 		StreamObserver<CalculateResponse> responseObserver = new StreamObserver<CalculateResponse>() {
@@ -185,8 +168,7 @@ public class MathClient {
 			e.printStackTrace();
 		}
 
-
-	}	
+	}	*/
 
 	public static void convertBase() {
 

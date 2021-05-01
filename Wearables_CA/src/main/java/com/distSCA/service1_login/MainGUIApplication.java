@@ -22,7 +22,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import com.distSCA.service3_calorie.CalculateRequest;
 import com.distSCA.service3_calorie.CalculateRequest.Operation;
+import com.distSCA.service3_calorie.CalculateResponse;
 import com.distSCA.service3_calorie.MathServiceGrpc.MathServiceBlockingStub;
 import com.distSCA.service3_calorie.MathServiceGrpc.MathServiceStub;
 import io.grpc.ManagedChannel;
@@ -37,8 +39,8 @@ import java.awt.event.ActionEvent;
 
 public class MainGUIApplication {
 
-	//private static MathServiceBlockingStub blockingStub;
-	//private static MathServiceStub asyncStub;
+	private static MathServiceBlockingStub blockingStub;
+	private static MathServiceStub asyncStub;
 
 	private ServiceInfo mathServiceInfo;
 	
@@ -73,7 +75,7 @@ public class MainGUIApplication {
 		discoverMathService(math_service_type);
 		
 		String host = "localhost";
-		int port = 60601;
+		int port = 60151;
 		
 		ManagedChannel channel = ManagedChannelBuilder
 				.forAddress(host, port)
@@ -170,14 +172,14 @@ public class MainGUIApplication {
 		frame.getContentPane().add(panel_service_1);
 		panel_service_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JLabel lblNewLabel_1 = new JLabel("Name");
+		JLabel lblNewLabel_1 = new JLabel("Calories");
 		panel_service_1.add(lblNewLabel_1);
 		
 		textNumber1 = new JTextField();
 		panel_service_1.add(textNumber1);
 		textNumber1.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Password");
+		JLabel lblNewLabel_2 = new JLabel("Days");
 		panel_service_1.add(lblNewLabel_2);
 		
 		textNumber2 = new JTextField();
@@ -198,15 +200,15 @@ public class MainGUIApplication {
 				int num2 = Integer.parseInt(textNumber2.getText());
 
 				int index = comboOperation.getSelectedIndex();
-		//		Operation operation = Operation.forNumber(index);
+				Operation operation = Operation.forNumber(index);
 				
-		//		CalculateRequest req = CalculateRequest.newBuilder().setNumber1(num1).setNumber2(num2).setOperation(operation).build();
+				CalculateRequest req = CalculateRequest.newBuilder().setNumber1(num1).setNumber2(num2).setOperation(operation).build();
 
-		//		CalculateResponse response = blockingStub.calculate(req);
+				CalculateResponse response = blockingStub.calculate(req);
 
-		//		textResponse.append("reply:"+ response.getResult() + " mes:"+ response.getMessage() + "\n");
+				textResponse.append("reply:"+ response.getResult() + " mes:"+ response.getMessage() + "\n");
 				
-		//		System.out.println("res: " + response.getResult() + " mes: " + response.getMessage());
+				System.out.println("res: " + response.getResult() + " mes: " + response.getMessage());
 
 			}
 		});
