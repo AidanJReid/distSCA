@@ -33,12 +33,12 @@ public class MathClient {
 		
 		calculate();
 		
-		generateRandomNumbersAsyn();
-		generateRandomNumbersBlocking();
+	//	generateRandomNumbersAsyn();
+	//	generateRandomNumbersBlocking();
 
-		averageValues();
+	//	averageValues();
 
-		convertBase();
+	//	convertBase();
 
 	}
 
@@ -50,7 +50,7 @@ public class MathClient {
 
 		CalculateRequest req = CalculateRequest.newBuilder().setNumber1(num1).setNumber2(num2).build();
 
-	//	CalculateResponse response = blockingStub.calculate(req);
+		CalculateResponse response = blockingStub.calculate(req);
 
 	//	System.out.println("res: " + response.getResult() + " mes: " + response.getMessage());
 		System.out.println(req);

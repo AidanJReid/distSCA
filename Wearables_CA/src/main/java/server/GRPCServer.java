@@ -62,7 +62,7 @@ private Properties getProperties() {
 
 	            prop = new Properties();
 
-	            // load a properties file
+	            // load the properties file in resources
 	            prop.load(input);
 
 	            // get the property value and print it out

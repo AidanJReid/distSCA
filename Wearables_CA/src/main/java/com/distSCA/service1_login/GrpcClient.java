@@ -25,7 +25,7 @@ public class GrpcClient {
 		userBlockingStub userStub = userGrpc.newBlockingStub(channel);
 		
 		try {
-			String name = "Aidan";
+			String name = "Aidan"; // testing purposes to see if name = password -> Should return successful
 			String password = "Aidan";
 		LoginRequest loginrequest = 
 				LoginRequest.newBuilder()
@@ -43,7 +43,7 @@ public class GrpcClient {
 		    
 	    } finally {
 		
-		channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
+		channel.shutdown().awaitTermination(5, TimeUnit.SECONDS); // recent implementation after error throw - see file
 	    }
 	}
 
