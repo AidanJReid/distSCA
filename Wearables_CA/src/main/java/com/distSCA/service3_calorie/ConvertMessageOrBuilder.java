@@ -4,7 +4,7 @@
 package com.distSCA.service3_calorie;
 
 public interface ConvertMessageOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:service3_calorie.ConvertMessage)
+    // @@protoc_insertion_point(interface_extends:ConvertMessage)
     com.google.protobuf.MessageOrBuilder {
 
   /**

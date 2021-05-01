@@ -4,11 +4,11 @@
 package com.distSCA.service3_calorie;
 
 /**
- * Protobuf type {@code service3_calorie.CalculateResponse}
+ * Protobuf type {@code CalculateResponse}
  */
 public  final class CalculateResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:service3_calorie.CalculateResponse)
+    // @@protoc_insertion_point(message_implements:CalculateResponse)
     CalculateResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use CalculateResponse.newBuilder() to construct.
@@ -76,13 +76,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.distSCA.service3_calorie.MathServiceImpl.internal_static_service3_calorie_CalculateResponse_descriptor;
+    return com.distSCA.service3_calorie.MathServiceImpl.internal_static_CalculateResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.distSCA.service3_calorie.MathServiceImpl.internal_static_service3_calorie_CalculateResponse_fieldAccessorTable
+    return com.distSCA.service3_calorie.MathServiceImpl.internal_static_CalculateResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.distSCA.service3_calorie.CalculateResponse.class, com.distSCA.service3_calorie.CalculateResponse.Builder.class);
   }
@@ -300,21 +300,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code service3_calorie.CalculateResponse}
+   * Protobuf type {@code CalculateResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:service3_calorie.CalculateResponse)
+      // @@protoc_insertion_point(builder_implements:CalculateResponse)
       com.distSCA.service3_calorie.CalculateResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.distSCA.service3_calorie.MathServiceImpl.internal_static_service3_calorie_CalculateResponse_descriptor;
+      return com.distSCA.service3_calorie.MathServiceImpl.internal_static_CalculateResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.distSCA.service3_calorie.MathServiceImpl.internal_static_service3_calorie_CalculateResponse_fieldAccessorTable
+      return com.distSCA.service3_calorie.MathServiceImpl.internal_static_CalculateResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.distSCA.service3_calorie.CalculateResponse.class, com.distSCA.service3_calorie.CalculateResponse.Builder.class);
     }
@@ -347,7 +347,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.distSCA.service3_calorie.MathServiceImpl.internal_static_service3_calorie_CalculateResponse_descriptor;
+      return com.distSCA.service3_calorie.MathServiceImpl.internal_static_CalculateResponse_descriptor;
     }
 
     @java.lang.Override
@@ -560,10 +560,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:service3_calorie.CalculateResponse)
+    // @@protoc_insertion_point(builder_scope:CalculateResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:service3_calorie.CalculateResponse)
+  // @@protoc_insertion_point(class_scope:CalculateResponse)
   private static final com.distSCA.service3_calorie.CalculateResponse DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.distSCA.service3_calorie.CalculateResponse();

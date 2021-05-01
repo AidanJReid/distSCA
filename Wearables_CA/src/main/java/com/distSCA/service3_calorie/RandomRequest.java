@@ -4,11 +4,11 @@
 package com.distSCA.service3_calorie;
 
 /**
- * Protobuf type {@code service3_calorie.RandomRequest}
+ * Protobuf type {@code RandomRequest}
  */
 public  final class RandomRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:service3_calorie.RandomRequest)
+    // @@protoc_insertion_point(message_implements:RandomRequest)
     RandomRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use RandomRequest.newBuilder() to construct.
@@ -81,13 +81,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.distSCA.service3_calorie.MathServiceImpl.internal_static_service3_calorie_RandomRequest_descriptor;
+    return com.distSCA.service3_calorie.MathServiceImpl.internal_static_RandomRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.distSCA.service3_calorie.MathServiceImpl.internal_static_service3_calorie_RandomRequest_fieldAccessorTable
+    return com.distSCA.service3_calorie.MathServiceImpl.internal_static_RandomRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.distSCA.service3_calorie.RandomRequest.class, com.distSCA.service3_calorie.RandomRequest.Builder.class);
   }
@@ -298,21 +298,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code service3_calorie.RandomRequest}
+   * Protobuf type {@code RandomRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:service3_calorie.RandomRequest)
+      // @@protoc_insertion_point(builder_implements:RandomRequest)
       com.distSCA.service3_calorie.RandomRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.distSCA.service3_calorie.MathServiceImpl.internal_static_service3_calorie_RandomRequest_descriptor;
+      return com.distSCA.service3_calorie.MathServiceImpl.internal_static_RandomRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.distSCA.service3_calorie.MathServiceImpl.internal_static_service3_calorie_RandomRequest_fieldAccessorTable
+      return com.distSCA.service3_calorie.MathServiceImpl.internal_static_RandomRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.distSCA.service3_calorie.RandomRequest.class, com.distSCA.service3_calorie.RandomRequest.Builder.class);
     }
@@ -347,7 +347,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.distSCA.service3_calorie.MathServiceImpl.internal_static_service3_calorie_RandomRequest_descriptor;
+      return com.distSCA.service3_calorie.MathServiceImpl.internal_static_RandomRequest_descriptor;
     }
 
     @java.lang.Override
@@ -546,10 +546,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:service3_calorie.RandomRequest)
+    // @@protoc_insertion_point(builder_scope:RandomRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:service3_calorie.RandomRequest)
+  // @@protoc_insertion_point(class_scope:RandomRequest)
   private static final com.distSCA.service3_calorie.RandomRequest DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.distSCA.service3_calorie.RandomRequest();

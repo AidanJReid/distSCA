@@ -19,7 +19,7 @@ public class MathClient {
 	private static MathServiceStub asyncStub;
 
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 
 		ManagedChannel channel = ManagedChannelBuilder
 				.forAddress("localhost", 60601)
@@ -33,12 +33,12 @@ public class MathClient {
 
 
 		
-		//calculate();
+		calculate();
 		
 		
 		
-		generateRandomNumbersAsyn();
-		generateRandomNumbersBlocking();
+	//	generateRandomNumbersAsyn();
+	//	generateRandomNumbersBlocking();
 
 				
 		//averageValues();
@@ -47,7 +47,7 @@ public class MathClient {
 
 	}
 
-	/*
+	
 	//unary rpc
 	public static void calculate() {
 		int num1 = 10;
@@ -55,12 +55,12 @@ public class MathClient {
 
 		CalculateRequest req = CalculateRequest.newBuilder().setNumber1(num1).setNumber2(num2).build();
 
-		CalculateResponse response = blockingStub.calculate(req);
+	//	CalculateResponse response = blockingStub.calculate(req);
 
 	//	System.out.println("res: " + response.getResult() + " mes: " + response.getMessage());
-		System.out.println("HEY THERE!" + response);
+		System.out.println(req);
 	}
-	*/
+	
 
 	//blocking server-streaming
 	public static void generateRandomNumbersBlocking() throws Exception{

@@ -4,8 +4,6 @@ option java_multiple_files = true;
 option java_package = "com.distSCA.service3_calorie";
 option java_outer_classname = "MathServiceImpl";
 
-package service3_calorie;
-
 // Interface exported by the server.
 service MathService {
 
@@ -43,8 +41,6 @@ message RandomRequest {
 message NumberResponse {
 	int32 number = 1;
 }
-
-
 
 message CalculateRequest {
   float number1 = 1;

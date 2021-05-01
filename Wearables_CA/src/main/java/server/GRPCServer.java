@@ -1,5 +1,8 @@
 package server;
 
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -22,6 +25,7 @@ import user.UserService;
 
 public class GRPCServer extends MathServiceImplBase {
 
+	// Server set up default message for all connections
 	public static void main(String args[]) throws IOException, InterruptedException {
 		 
 		 System.out.println("starting GRPC Server");
@@ -34,6 +38,7 @@ public class GRPCServer extends MathServiceImplBase {
 	        server.awaitTermination();
 	 }
 	
+	// Calculate Request relevant to Service 3 Calorie counter
 	public void calculate(CalculateRequest request, 
 			StreamObserver<CalculateResponse> responseObserver) {
 
@@ -62,11 +67,13 @@ public class GRPCServer extends MathServiceImplBase {
 		responseObserver.onCompleted();
 	}
 	
+	
+	// Random request used for Service 2 proximity values
 	public void generateRandomNumbers(RandomRequest request,
 			StreamObserver<NumberResponse> responseObserver) {
 
 
-		System.out.printf("receiving generateRandom method num: %d from: %d to: %d \n",
+		System.out.printf("Receiving generateRandom method num: %d from: %d to: %d \n",
 				request.getNumbers(), request.getMin(), request.getMax()  );
 
 		Random rand = new Random();
@@ -94,7 +101,7 @@ public class GRPCServer extends MathServiceImplBase {
 
 	}
 
-
+	// Average values used in Method 4.1.1 bidirectional steaming factoring for weather
 	public StreamObserver<NumberMessage> averageValues(
 			StreamObserver<CalculateResponse> responseObserver) {
 
@@ -106,7 +113,7 @@ public class GRPCServer extends MathServiceImplBase {
 			@Override
 			public void onNext(NumberMessage request) {
 
-				System.out.println("receiving averageValues method num: "+ request.getNumber()  );
+				System.out.println("Receiving averageValues method num: "+ request.getNumber()  );
 
 				list.add(request.getNumber());		           
 
@@ -114,13 +121,13 @@ public class GRPCServer extends MathServiceImplBase {
 
 			@Override
 			public void onError(Throwable t) {
-				// TODO Auto-generated method stubal
+				// TODO Auto-generated method
 
 			}
 
 			@Override
 			public void onCompleted() {
-				System.out.printf("receiving averageValues method complete \n" );
+				System.out.printf("Receiving averageValues method complete \n" );
 
 				// System.out.println("mean "+ list.size());
 
@@ -142,7 +149,8 @@ public class GRPCServer extends MathServiceImplBase {
 		};
 
 	}
-
+	
+	// potentially extraneous code - putting in as placeholder
 	public StreamObserver<ConvertMessage> convertBase(StreamObserver<ConvertResponse> responseObserver) {
 		
 		return new StreamObserver<ConvertMessage> () {

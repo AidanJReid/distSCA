@@ -1,4 +1,4 @@
-package com.distSCA.service3_calorie;
+package com.distSCA.service2_prox;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
@@ -22,7 +22,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.15.0)",
-    comments = "Source: user3.proto")
+    comments = "Source: user2.proto")
 public final class MathServiceGrpc {
 
   private MathServiceGrpc() {}
@@ -30,30 +30,30 @@ public final class MathServiceGrpc {
   public static final String SERVICE_NAME = "MathService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.distSCA.service3_calorie.CalculateRequest,
-      com.distSCA.service3_calorie.CalculateResponse> getCalculateMethod;
+  private static volatile io.grpc.MethodDescriptor<com.distSCA.service2_prox.CalculateRequest,
+      com.distSCA.service2_prox.CalculateResponse> getCalculateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "calculate",
-      requestType = com.distSCA.service3_calorie.CalculateRequest.class,
-      responseType = com.distSCA.service3_calorie.CalculateResponse.class,
+      requestType = com.distSCA.service2_prox.CalculateRequest.class,
+      responseType = com.distSCA.service2_prox.CalculateResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.distSCA.service3_calorie.CalculateRequest,
-      com.distSCA.service3_calorie.CalculateResponse> getCalculateMethod() {
-    io.grpc.MethodDescriptor<com.distSCA.service3_calorie.CalculateRequest, com.distSCA.service3_calorie.CalculateResponse> getCalculateMethod;
+  public static io.grpc.MethodDescriptor<com.distSCA.service2_prox.CalculateRequest,
+      com.distSCA.service2_prox.CalculateResponse> getCalculateMethod() {
+    io.grpc.MethodDescriptor<com.distSCA.service2_prox.CalculateRequest, com.distSCA.service2_prox.CalculateResponse> getCalculateMethod;
     if ((getCalculateMethod = MathServiceGrpc.getCalculateMethod) == null) {
       synchronized (MathServiceGrpc.class) {
         if ((getCalculateMethod = MathServiceGrpc.getCalculateMethod) == null) {
           MathServiceGrpc.getCalculateMethod = getCalculateMethod = 
-              io.grpc.MethodDescriptor.<com.distSCA.service3_calorie.CalculateRequest, com.distSCA.service3_calorie.CalculateResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.distSCA.service2_prox.CalculateRequest, com.distSCA.service2_prox.CalculateResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "MathService", "calculate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.distSCA.service3_calorie.CalculateRequest.getDefaultInstance()))
+                  com.distSCA.service2_prox.CalculateRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.distSCA.service3_calorie.CalculateResponse.getDefaultInstance()))
+                  com.distSCA.service2_prox.CalculateResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new MathServiceMethodDescriptorSupplier("calculate"))
                   .build();
           }
@@ -62,30 +62,30 @@ public final class MathServiceGrpc {
      return getCalculateMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.distSCA.service3_calorie.RandomRequest,
-      com.distSCA.service3_calorie.NumberResponse> getGenerateRandomNumbersMethod;
+  private static volatile io.grpc.MethodDescriptor<com.distSCA.service2_prox.RandomRequest,
+      com.distSCA.service2_prox.NumberResponse> getGenerateRandomNumbersMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "generateRandomNumbers",
-      requestType = com.distSCA.service3_calorie.RandomRequest.class,
-      responseType = com.distSCA.service3_calorie.NumberResponse.class,
+      requestType = com.distSCA.service2_prox.RandomRequest.class,
+      responseType = com.distSCA.service2_prox.NumberResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<com.distSCA.service3_calorie.RandomRequest,
-      com.distSCA.service3_calorie.NumberResponse> getGenerateRandomNumbersMethod() {
-    io.grpc.MethodDescriptor<com.distSCA.service3_calorie.RandomRequest, com.distSCA.service3_calorie.NumberResponse> getGenerateRandomNumbersMethod;
+  public static io.grpc.MethodDescriptor<com.distSCA.service2_prox.RandomRequest,
+      com.distSCA.service2_prox.NumberResponse> getGenerateRandomNumbersMethod() {
+    io.grpc.MethodDescriptor<com.distSCA.service2_prox.RandomRequest, com.distSCA.service2_prox.NumberResponse> getGenerateRandomNumbersMethod;
     if ((getGenerateRandomNumbersMethod = MathServiceGrpc.getGenerateRandomNumbersMethod) == null) {
       synchronized (MathServiceGrpc.class) {
         if ((getGenerateRandomNumbersMethod = MathServiceGrpc.getGenerateRandomNumbersMethod) == null) {
           MathServiceGrpc.getGenerateRandomNumbersMethod = getGenerateRandomNumbersMethod = 
-              io.grpc.MethodDescriptor.<com.distSCA.service3_calorie.RandomRequest, com.distSCA.service3_calorie.NumberResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.distSCA.service2_prox.RandomRequest, com.distSCA.service2_prox.NumberResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "MathService", "generateRandomNumbers"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.distSCA.service3_calorie.RandomRequest.getDefaultInstance()))
+                  com.distSCA.service2_prox.RandomRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.distSCA.service3_calorie.NumberResponse.getDefaultInstance()))
+                  com.distSCA.service2_prox.NumberResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new MathServiceMethodDescriptorSupplier("generateRandomNumbers"))
                   .build();
           }
@@ -94,30 +94,30 @@ public final class MathServiceGrpc {
      return getGenerateRandomNumbersMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.distSCA.service3_calorie.NumberMessage,
-      com.distSCA.service3_calorie.CalculateResponse> getAverageValuesMethod;
+  private static volatile io.grpc.MethodDescriptor<com.distSCA.service2_prox.NumberMessage,
+      com.distSCA.service2_prox.CalculateResponse> getAverageValuesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "averageValues",
-      requestType = com.distSCA.service3_calorie.NumberMessage.class,
-      responseType = com.distSCA.service3_calorie.CalculateResponse.class,
+      requestType = com.distSCA.service2_prox.NumberMessage.class,
+      responseType = com.distSCA.service2_prox.CalculateResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-  public static io.grpc.MethodDescriptor<com.distSCA.service3_calorie.NumberMessage,
-      com.distSCA.service3_calorie.CalculateResponse> getAverageValuesMethod() {
-    io.grpc.MethodDescriptor<com.distSCA.service3_calorie.NumberMessage, com.distSCA.service3_calorie.CalculateResponse> getAverageValuesMethod;
+  public static io.grpc.MethodDescriptor<com.distSCA.service2_prox.NumberMessage,
+      com.distSCA.service2_prox.CalculateResponse> getAverageValuesMethod() {
+    io.grpc.MethodDescriptor<com.distSCA.service2_prox.NumberMessage, com.distSCA.service2_prox.CalculateResponse> getAverageValuesMethod;
     if ((getAverageValuesMethod = MathServiceGrpc.getAverageValuesMethod) == null) {
       synchronized (MathServiceGrpc.class) {
         if ((getAverageValuesMethod = MathServiceGrpc.getAverageValuesMethod) == null) {
           MathServiceGrpc.getAverageValuesMethod = getAverageValuesMethod = 
-              io.grpc.MethodDescriptor.<com.distSCA.service3_calorie.NumberMessage, com.distSCA.service3_calorie.CalculateResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.distSCA.service2_prox.NumberMessage, com.distSCA.service2_prox.CalculateResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "MathService", "averageValues"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.distSCA.service3_calorie.NumberMessage.getDefaultInstance()))
+                  com.distSCA.service2_prox.NumberMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.distSCA.service3_calorie.CalculateResponse.getDefaultInstance()))
+                  com.distSCA.service2_prox.CalculateResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new MathServiceMethodDescriptorSupplier("averageValues"))
                   .build();
           }
@@ -126,30 +126,30 @@ public final class MathServiceGrpc {
      return getAverageValuesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.distSCA.service3_calorie.ConvertMessage,
-      com.distSCA.service3_calorie.ConvertResponse> getConvertBaseMethod;
+  private static volatile io.grpc.MethodDescriptor<com.distSCA.service2_prox.ConvertMessage,
+      com.distSCA.service2_prox.ConvertResponse> getConvertBaseMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "convertBase",
-      requestType = com.distSCA.service3_calorie.ConvertMessage.class,
-      responseType = com.distSCA.service3_calorie.ConvertResponse.class,
+      requestType = com.distSCA.service2_prox.ConvertMessage.class,
+      responseType = com.distSCA.service2_prox.ConvertResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-  public static io.grpc.MethodDescriptor<com.distSCA.service3_calorie.ConvertMessage,
-      com.distSCA.service3_calorie.ConvertResponse> getConvertBaseMethod() {
-    io.grpc.MethodDescriptor<com.distSCA.service3_calorie.ConvertMessage, com.distSCA.service3_calorie.ConvertResponse> getConvertBaseMethod;
+  public static io.grpc.MethodDescriptor<com.distSCA.service2_prox.ConvertMessage,
+      com.distSCA.service2_prox.ConvertResponse> getConvertBaseMethod() {
+    io.grpc.MethodDescriptor<com.distSCA.service2_prox.ConvertMessage, com.distSCA.service2_prox.ConvertResponse> getConvertBaseMethod;
     if ((getConvertBaseMethod = MathServiceGrpc.getConvertBaseMethod) == null) {
       synchronized (MathServiceGrpc.class) {
         if ((getConvertBaseMethod = MathServiceGrpc.getConvertBaseMethod) == null) {
           MathServiceGrpc.getConvertBaseMethod = getConvertBaseMethod = 
-              io.grpc.MethodDescriptor.<com.distSCA.service3_calorie.ConvertMessage, com.distSCA.service3_calorie.ConvertResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.distSCA.service2_prox.ConvertMessage, com.distSCA.service2_prox.ConvertResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "MathService", "convertBase"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.distSCA.service3_calorie.ConvertMessage.getDefaultInstance()))
+                  com.distSCA.service2_prox.ConvertMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.distSCA.service3_calorie.ConvertResponse.getDefaultInstance()))
+                  com.distSCA.service2_prox.ConvertResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new MathServiceMethodDescriptorSupplier("convertBase"))
                   .build();
           }
@@ -190,29 +190,29 @@ public final class MathServiceGrpc {
 
     /**
      */
-    public void calculate(com.distSCA.service3_calorie.CalculateRequest request,
-        io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.CalculateResponse> responseObserver) {
+    public void calculate(com.distSCA.service2_prox.CalculateRequest request,
+        io.grpc.stub.StreamObserver<com.distSCA.service2_prox.CalculateResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getCalculateMethod(), responseObserver);
     }
 
     /**
      */
-    public void generateRandomNumbers(com.distSCA.service3_calorie.RandomRequest request,
-        io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.NumberResponse> responseObserver) {
+    public void generateRandomNumbers(com.distSCA.service2_prox.RandomRequest request,
+        io.grpc.stub.StreamObserver<com.distSCA.service2_prox.NumberResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGenerateRandomNumbersMethod(), responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.NumberMessage> averageValues(
-        io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.CalculateResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<com.distSCA.service2_prox.NumberMessage> averageValues(
+        io.grpc.stub.StreamObserver<com.distSCA.service2_prox.CalculateResponse> responseObserver) {
       return asyncUnimplementedStreamingCall(getAverageValuesMethod(), responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.ConvertMessage> convertBase(
-        io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.ConvertResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<com.distSCA.service2_prox.ConvertMessage> convertBase(
+        io.grpc.stub.StreamObserver<com.distSCA.service2_prox.ConvertResponse> responseObserver) {
       return asyncUnimplementedStreamingCall(getConvertBaseMethod(), responseObserver);
     }
 
@@ -222,29 +222,29 @@ public final class MathServiceGrpc {
             getCalculateMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.distSCA.service3_calorie.CalculateRequest,
-                com.distSCA.service3_calorie.CalculateResponse>(
+                com.distSCA.service2_prox.CalculateRequest,
+                com.distSCA.service2_prox.CalculateResponse>(
                   this, METHODID_CALCULATE)))
           .addMethod(
             getGenerateRandomNumbersMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
-                com.distSCA.service3_calorie.RandomRequest,
-                com.distSCA.service3_calorie.NumberResponse>(
+                com.distSCA.service2_prox.RandomRequest,
+                com.distSCA.service2_prox.NumberResponse>(
                   this, METHODID_GENERATE_RANDOM_NUMBERS)))
           .addMethod(
             getAverageValuesMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
-                com.distSCA.service3_calorie.NumberMessage,
-                com.distSCA.service3_calorie.CalculateResponse>(
+                com.distSCA.service2_prox.NumberMessage,
+                com.distSCA.service2_prox.CalculateResponse>(
                   this, METHODID_AVERAGE_VALUES)))
           .addMethod(
             getConvertBaseMethod(),
             asyncBidiStreamingCall(
               new MethodHandlers<
-                com.distSCA.service3_calorie.ConvertMessage,
-                com.distSCA.service3_calorie.ConvertResponse>(
+                com.distSCA.service2_prox.ConvertMessage,
+                com.distSCA.service2_prox.ConvertResponse>(
                   this, METHODID_CONVERT_BASE)))
           .build();
     }
@@ -273,32 +273,32 @@ public final class MathServiceGrpc {
 
     /**
      */
-    public void calculate(com.distSCA.service3_calorie.CalculateRequest request,
-        io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.CalculateResponse> responseObserver) {
+    public void calculate(com.distSCA.service2_prox.CalculateRequest request,
+        io.grpc.stub.StreamObserver<com.distSCA.service2_prox.CalculateResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCalculateMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void generateRandomNumbers(com.distSCA.service3_calorie.RandomRequest request,
-        io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.NumberResponse> responseObserver) {
+    public void generateRandomNumbers(com.distSCA.service2_prox.RandomRequest request,
+        io.grpc.stub.StreamObserver<com.distSCA.service2_prox.NumberResponse> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getGenerateRandomNumbersMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.NumberMessage> averageValues(
-        io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.CalculateResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<com.distSCA.service2_prox.NumberMessage> averageValues(
+        io.grpc.stub.StreamObserver<com.distSCA.service2_prox.CalculateResponse> responseObserver) {
       return asyncClientStreamingCall(
           getChannel().newCall(getAverageValuesMethod(), getCallOptions()), responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.ConvertMessage> convertBase(
-        io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.ConvertResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<com.distSCA.service2_prox.ConvertMessage> convertBase(
+        io.grpc.stub.StreamObserver<com.distSCA.service2_prox.ConvertResponse> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getConvertBaseMethod(), getCallOptions()), responseObserver);
     }
@@ -327,15 +327,15 @@ public final class MathServiceGrpc {
 
     /**
      */
-    public com.distSCA.service3_calorie.CalculateResponse calculate(com.distSCA.service3_calorie.CalculateRequest request) {
+    public com.distSCA.service2_prox.CalculateResponse calculate(com.distSCA.service2_prox.CalculateRequest request) {
       return blockingUnaryCall(
           getChannel(), getCalculateMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public java.util.Iterator<com.distSCA.service3_calorie.NumberResponse> generateRandomNumbers(
-        com.distSCA.service3_calorie.RandomRequest request) {
+    public java.util.Iterator<com.distSCA.service2_prox.NumberResponse> generateRandomNumbers(
+        com.distSCA.service2_prox.RandomRequest request) {
       return blockingServerStreamingCall(
           getChannel(), getGenerateRandomNumbersMethod(), getCallOptions(), request);
     }
@@ -364,8 +364,8 @@ public final class MathServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.distSCA.service3_calorie.CalculateResponse> calculate(
-        com.distSCA.service3_calorie.CalculateRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.distSCA.service2_prox.CalculateResponse> calculate(
+        com.distSCA.service2_prox.CalculateRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCalculateMethod(), getCallOptions()), request);
     }
@@ -394,12 +394,12 @@ public final class MathServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CALCULATE:
-          serviceImpl.calculate((com.distSCA.service3_calorie.CalculateRequest) request,
-              (io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.CalculateResponse>) responseObserver);
+          serviceImpl.calculate((com.distSCA.service2_prox.CalculateRequest) request,
+              (io.grpc.stub.StreamObserver<com.distSCA.service2_prox.CalculateResponse>) responseObserver);
           break;
         case METHODID_GENERATE_RANDOM_NUMBERS:
-          serviceImpl.generateRandomNumbers((com.distSCA.service3_calorie.RandomRequest) request,
-              (io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.NumberResponse>) responseObserver);
+          serviceImpl.generateRandomNumbers((com.distSCA.service2_prox.RandomRequest) request,
+              (io.grpc.stub.StreamObserver<com.distSCA.service2_prox.NumberResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -413,10 +413,10 @@ public final class MathServiceGrpc {
       switch (methodId) {
         case METHODID_AVERAGE_VALUES:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.averageValues(
-              (io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.CalculateResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.distSCA.service2_prox.CalculateResponse>) responseObserver);
         case METHODID_CONVERT_BASE:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.convertBase(
-              (io.grpc.stub.StreamObserver<com.distSCA.service3_calorie.ConvertResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.distSCA.service2_prox.ConvertResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -429,7 +429,7 @@ public final class MathServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.distSCA.service3_calorie.MathServiceImpl.getDescriptor();
+      return com.distSCA.service2_prox.MathServiceImpl.getDescriptor();
     }
 
     @java.lang.Override
